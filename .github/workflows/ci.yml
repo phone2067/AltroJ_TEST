@@ -1,0 +1,78 @@
+name: Simulated CI/CD Pipeline
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  fake-ci-cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📅 Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: ⏳ Wait before build
+        run: sleep 2
+
+      - name: 🏗 Build Step (simulated)
+        run: |
+          echo "Building the project..."
+          sleep 1
+          echo "."
+          sleep 1
+          echo ".."
+          sleep 1
+          echo "..."
+          sleep 1
+          echo "✅ Build successful!"
+
+      - name: ⏳ Wait before test
+        run: sleep 2
+
+      - name: 🧪 Run Tests (simulated)
+        run: |
+          echo "Running tests..."
+          sleep 1
+          echo "Test 1: ✅"
+          sleep 1
+          echo "Test 2: ✅"
+          sleep 1
+          echo "Test 3: ✅"
+          echo "✅ All tests passed!"
+
+      - name: ⏳ Wait before deploy
+        run: sleep 2
+
+      - name: 🚀 Deploy (simulated)
+        run: |
+          echo "Deploying to staging..."
+          sleep 1
+          echo "."
+          sleep 1
+          echo ".."
+          sleep 1
+          echo "..."
+          sleep 1
+          echo "✅ Deployed successfully!"
+
+      - name: ⏳ Wait before API call
+        run: sleep 2
+
+      - name: 🌐 Call External API
+        run: |
+          echo "Calling external deployment API..."
+          sleep 1
+          curl -X POST https://httpbin.org/post \
+            -H "Content-Type: application/json" \
+            -d '{"status": "success", "message": "CI/CD finished!", "repo": "${{ github.repository }}"}'
+          echo "✅ API call completed"
+
+      - name: ⏳ Wait before notification
+        run: sleep 2
+
+      - name: 📢 Notify (simulated)
+        run: |
+          echo "Sending CI/CD completion notification..."
+          sleep 1
+          echo "📢 Notification sent: CI/CD pipeline for ${{ github.repository }} completed successfully."
