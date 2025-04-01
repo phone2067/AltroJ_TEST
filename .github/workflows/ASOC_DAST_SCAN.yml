@@ -25,7 +25,7 @@ jobs:
           #login_user: admin
           #login_password: admin
           login_method: recorded
-          logine_sequence_file: login/seq_demo.dast.config
+          login_sequence_file: login/seq_demo.dast.config
           network: public
           fail_for_noncompliance: false
           wait_for_analysis: true
