@@ -21,9 +21,11 @@ jobs:
           application_id: 15dad7d4-511e-4c79-883a-d2b788aec9d8
           dynamic_scan_type: dast
           starting_URL: 'https://demo.testfire.net?mode=demo'
-          login_method: userpass
-          login_user: jsmith
-          login_password: demo1234
+          #login_method: userpass
+          #login_user: admin
+          #login_password: admin
+          login_method: recorded
+          logine_sequence_file: login/seq_demo.dast.config
           network: public
           fail_for_noncompliance: false
           wait_for_analysis: true
