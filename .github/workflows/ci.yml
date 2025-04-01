@@ -56,18 +56,18 @@ jobs:
           sleep 1
           echo "✅ Deployed successfully!"
 
-      - name: ⏳ Wait before API call
-        run: sleep 2
+      - name: 🌐 Call ASOC_DAST_SCAN
+        uses: ./.github/workflows/ASOC_DAST_SCAN.yml
 
-      - name: 🌐 Call External API
-        run: |
-          echo "Calling external deployment API..."
-          sleep 1
-          curl -X POST https://httpbin.org/post \
-            -H "Content-Type: application/json" \
-            -d '{"status": "success", "message": "CI/CD finished!", "repo": "${{ github.repository }}"}'
-          echo "✅ API call completed"
+      #- name: 🌐 Call AppScan360_DAST_SCAN
+      #  uses: ./.github/workflows/AppScan360_DAST_SCAN.yml
+        
+      #- name: 🌐 Call AppScanENT_DAST_SCAN
+      #  uses: ./.github/workflows/AppScanENT_DAST_SCAN.yml
 
+      #- name: 🌐 Call AppScanSTD_DAST_SCAN
+      #  uses: ./.github/workflows/AppScanSTD_DAST_SCAN.yml
+        
       - name: ⏳ Wait before notification
         run: sleep 2
 
