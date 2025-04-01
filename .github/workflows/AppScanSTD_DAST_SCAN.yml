@@ -4,7 +4,7 @@ on:
 
 jobs:
   runs-bat:
-    runs-on: [self-host, windows]
+    runs-on: [self-hosted, windows]
     steps:
         - name: Run Scan.bat
           run: C:\AppScanSTD\Altroj_Scan_start.bat
