@@ -74,4 +74,8 @@ jobs:
 
     uses: ./.github/workflows/AppScanSTD_DAST_SCAN_runner.yml
     uses: ./.github/workflows/AppScanSTD_DAST_SCAN_ssh.yml
+    secrets:
+        WIN_SERVER_IP: ${{ secrets.WIN_SERVER_IP }}
+        WIN_USER: ${{ secrets.WIN_USER }} 
+        WIN_PASS: ${{ secrets.WIN_PASS }} 
         
