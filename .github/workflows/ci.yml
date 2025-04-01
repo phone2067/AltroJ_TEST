@@ -72,7 +72,7 @@ jobs:
     #  ASOC_KEY: ${{ secrets.ASOC_KEY }}
     #  ASOC_SECRET: ${{ secrets.ASOC_SECRET }}
 
-    uses: ./.github/workflows/AppScanSTD_DAST_SCAN_runner.yml
+    #uses: ./.github/workflows/AppScanSTD_DAST_SCAN_runner.yml
     uses: ./.github/workflows/AppScanSTD_DAST_SCAN_ssh.yml
     secrets:
         WIN_SERVER_IP: ${{ secrets.WIN_SERVER_IP }}
