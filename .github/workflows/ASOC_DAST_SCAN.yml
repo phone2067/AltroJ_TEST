@@ -1,7 +1,11 @@
 name: "HCL AppScan DAST - basic"
 on:
   workflow_call:
-
+    secrets:
+      ASOC_KEY:
+        required: true
+      ASOC_SECRET:
+        required: true
 jobs:
   scan:
     runs-on: ubuntu-latest
