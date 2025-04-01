@@ -65,15 +65,10 @@ jobs:
           sleep 1
           echo "📢 Notification sent: CI/CD pipeline for ${{ github.repository }} completed successfully."
           
-       dast-scan:
-       uses: ./.github/workflows/ASOC_DAST_SCAN.yml
+  dast-scan:
+    uses: ./.github/workflows/ASOC_DAST_SCAN.yml
 
-      #- name: 🌐 Call AppScan360_DAST_SCAN
-      #  uses: ./.github/workflows/AppScan360_DAST_SCAN.yml
-        
-      #- name: 🌐 Call AppScanENT_DAST_SCAN
-      #  uses: ./.github/workflows/AppScanENT_DAST_SCAN.yml
-
-      #- name: 🌐 Call AppScanSTD_DAST_SCAN
-      #  uses: ./.github/workflows/AppScanSTD_DAST_SCAN.yml
+    #uses: ./.github/workflows/AppScan360_DAST_SCAN.yml
+    #uses: ./.github/workflows/AppScanENT_DAST_SCAN.yml
+    #uses: ./.github/workflows/AppScanSTD_DAST_SCAN.yml
         
