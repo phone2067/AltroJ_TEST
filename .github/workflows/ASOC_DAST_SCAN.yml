@@ -1,6 +1,6 @@
 name: "HCL AppScan DAST - basic"
 on:
-  [workflow_call]
+  workflow_call:
 
 jobs:
   scan:
