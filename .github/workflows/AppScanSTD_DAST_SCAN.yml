@@ -1,0 +1,10 @@
+name: "HCL AppScan DAST - basic"
+on:
+  workflow_call:
+
+jobs:
+  runs-bat:
+    runs-on: self-host
+    steps:
+        - name: Run Scan.bat
+          run: C:\AppScanSTD\Altroj_Scan_start.bat

@@ -66,12 +66,13 @@ jobs:
           echo "📢 Notification sent: CI/CD pipeline for ${{ github.repository }} completed successfully."
           
   dast-scan:
-    uses: ./.github/workflows/ASOC_DAST_SCAN.yml
-    secrets:
-      ASOC_KEY: ${{ secrets.ASOC_KEY }}
-      ASOC_SECRET: ${{ secrets.ASOC_SECRET }}
+    needs: ci-cd
+    #uses: ./.github/workflows/ASOC_DAST_SCAN.yml
+    #secrets:
+    #  ASOC_KEY: ${{ secrets.ASOC_KEY }}
+    #  ASOC_SECRET: ${{ secrets.ASOC_SECRET }}
 
     #uses: ./.github/workflows/AppScan360_DAST_SCAN.yml
     #uses: ./.github/workflows/AppScanENT_DAST_SCAN.yml
-    #uses: ./.github/workflows/AppScanSTD_DAST_SCAN.yml
+    uses: ./.github/workflows/AppScanSTD_DAST_SCAN.yml
         
