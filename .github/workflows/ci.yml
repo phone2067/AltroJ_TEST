@@ -56,8 +56,19 @@ jobs:
           sleep 1
           echo "✅ Deployed successfully!"
 
-      - name: 🌐 Call ASOC_DAST_SCAN
-        uses: ./.github/workflows/ASOC_DAST_SCAN.yml
+      - name: ⏳ Wait before notification
+        run: sleep 2
+
+      - name: 📢 Notify (simulated)
+        run: |
+          echo "Sending CI/CD completion notification..."
+          sleep 1
+          echo "📢 Notification sent: CI/CD pipeline for ${{ github.repository }} completed successfully."
+          
+          
+    DAST-SCAN:
+       - name: 🌐 Call ASOC_DAST_SCAN
+         uses: ./.github/workflows/ASOC_DAST_SCAN.yml
 
       #- name: 🌐 Call AppScan360_DAST_SCAN
       #  uses: ./.github/workflows/AppScan360_DAST_SCAN.yml
@@ -68,11 +79,3 @@ jobs:
       #- name: 🌐 Call AppScanSTD_DAST_SCAN
       #  uses: ./.github/workflows/AppScanSTD_DAST_SCAN.yml
         
-      - name: ⏳ Wait before notification
-        run: sleep 2
-
-      - name: 📢 Notify (simulated)
-        run: |
-          echo "Sending CI/CD completion notification..."
-          sleep 1
-          echo "📢 Notification sent: CI/CD pipeline for ${{ github.repository }} completed successfully."
