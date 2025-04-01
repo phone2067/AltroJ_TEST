@@ -1,0 +1,24 @@
+name: "AppScanSTD_DAST_SCAN"
+on:
+  workflow_call:
+    secrets:
+      WIN_SERVER_IP:
+        required: true
+      WIN_USER:
+        required: true
+      WIN_PASS:
+        required: true  
+        
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+        - name: SSH into Windows and run scheduled task
+          uses: appleboy/ssh-action@v1.0.0
+          with:
+            host: ${{ secrets.WIN_SERVER_IP }}
+            username: ${{ secrets.WIN_USER }}
+            password: ${{ secrets.WIN_PASS }}
+            port: 22
+            script: |
+                schtasks /Run /TN "RunAltroj_Scan_Bat"

@@ -1,9 +1,9 @@
-name: "HCL AppScan DAST - basic"
+name: "AppScanSTD_DAST_SCAN"
 on:
   workflow_call:
 
 jobs:
-  runs-bat:
+  scan:
     runs-on: [self-hosted, windows]
     steps:
         - name: Run Scan.bat
