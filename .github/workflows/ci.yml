@@ -67,8 +67,7 @@ jobs:
           
           
     DAST-SCAN:
-       - name: 🌐 Call ASOC_DAST_SCAN
-         uses: ./.github/workflows/ASOC_DAST_SCAN.yml
+       uses: ./.github/workflows/ASOC_DAST_SCAN.yml
 
       #- name: 🌐 Call AppScan360_DAST_SCAN
       #  uses: ./.github/workflows/AppScan360_DAST_SCAN.yml
